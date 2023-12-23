@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Rules.dart';
 
 class TicTacToe extends StatefulWidget {
   const TicTacToe({super.key});
@@ -55,6 +56,22 @@ class _TicTacToeState extends State<TicTacToe> {
                 backgroundColor: MaterialStateProperty.all(Colors.grey),
               ),
             ),
+
+            TextButton(
+              child: Text(
+                'Rules Page',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => RulesPage()));
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey),
+              ),
+            ),
+
           ],
         ),
       ),
@@ -70,7 +87,7 @@ class _TicTacToeState extends State<TicTacToe> {
         ),
 
         iconTheme: IconThemeData(
-            color: Colors.white  //Drawer ikonunun rengi beyaz
+            color: Colors.white  //AppBardaki tüm ikonların rengi beyaz
         ),
       ),
 

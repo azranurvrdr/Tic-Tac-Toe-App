@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app_ttt/Rules.dart';
 
 import 'TicTacToe.dart';
 
@@ -62,6 +63,20 @@ class _LoginPageState extends State<LoginPage> {
 
               child: Text(
                 "Play Game",
+                style: TextStyle(color: Colors.white), //Butonun yazısı beyaz
+              ),
+            ),
+
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => RulesPage()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey.shade400,
+              ),
+
+              child: Text(
+                "Rules Page",
                 style: TextStyle(color: Colors.white), //Butonun yazısı beyaz
               ),
             ),
