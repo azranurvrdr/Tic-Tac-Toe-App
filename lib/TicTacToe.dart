@@ -25,9 +25,12 @@ class _TicTacToeState extends State<TicTacToe> {
           children: <Widget> [
             //Drawerın içeriği
             DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.grey,
+              ),
               child: Container(
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   'Tic Tac Toe',
                   style:
                   TextStyle(
@@ -37,38 +40,35 @@ class _TicTacToeState extends State<TicTacToe> {
                   ),
                 ),
               ),
-              decoration: BoxDecoration(
-                color: Colors.grey,
-              ),
             ),
 
             TextButton(
-              child: Text(
-                'Back to Login Page',
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
               onPressed: (){
                 Navigator.of(context).popUntil((route) => route.isFirst);
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.grey),
               ),
-            ),
-
-            TextButton(
-              child: Text(
-                'Rules Page',
+              child: const Text(
+                'Back to Login Page',
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
+            ),
+
+            TextButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => RulesPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const RulesPage()));
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.grey),
+              ),
+              child: const Text(
+                'Rules Page',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
               ),
             ),
 
@@ -79,14 +79,14 @@ class _TicTacToeState extends State<TicTacToe> {
 
       appBar: AppBar(
         backgroundColor: Colors.grey.shade800,
-        title: Text(
+        title: const Text(
           "Tic Tac Toe",
           style: TextStyle(
             color: Colors.white, //AppBarın yazısı beyaz
           ),
         ),
 
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
             color: Colors.white  //AppBardaki tüm ikonların rengi beyaz
         ),
       ),
@@ -104,14 +104,14 @@ class _TicTacToeState extends State<TicTacToe> {
               children: [
                 Text(
                   'Player X: $playerXWins',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   'Player O: $playerOWins',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -123,7 +123,7 @@ class _TicTacToeState extends State<TicTacToe> {
 
             //Oyun tahtası
             GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, //3x3 boyutunda
                 crossAxisSpacing: 8.0, //yatay boşluk
                 mainAxisSpacing: 8.0, //dikey boşluk
@@ -152,7 +152,7 @@ class _TicTacToeState extends State<TicTacToe> {
                     child: Center(
                       child: Text(
                         boxes[index], //kutu içeriği (X veya O)
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
@@ -163,16 +163,16 @@ class _TicTacToeState extends State<TicTacToe> {
               },
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               (winner.isNotEmpty) ? '$winner wins!' : (boxes.every((element) => element.isNotEmpty)) ? 'It\'s a draw!' : 'Next Player: $currentPlayer',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 //oyunu sıfırlama
@@ -186,7 +186,7 @@ class _TicTacToeState extends State<TicTacToe> {
                 backgroundColor: Colors.grey.shade400,
               ),
 
-              child: Text(
+              child: const Text(
                 'Restrart Game',
                 style: TextStyle(color: Colors.white), //Butonun yazısı beyaz
               ),

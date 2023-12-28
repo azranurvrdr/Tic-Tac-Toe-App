@@ -24,12 +24,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white10),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -42,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Login Page",
           style: TextStyle(
             color: Colors.white, //AppBarın yazısı beyaz
@@ -55,13 +57,13 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TicTacToe()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const TicTacToe()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey.shade400,
               ),
 
-              child: Text(
+              child: const Text(
                 "Play Game",
                 style: TextStyle(color: Colors.white), //Butonun yazısı beyaz
               ),
@@ -69,13 +71,13 @@ class _LoginPageState extends State<LoginPage> {
 
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => RulesPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const RulesPage()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey.shade400,
               ),
 
-              child: Text(
+              child: const Text(
                 "Rules Page",
                 style: TextStyle(color: Colors.white), //Butonun yazısı beyaz
               ),

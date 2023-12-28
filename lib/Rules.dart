@@ -13,14 +13,14 @@ class _RulesPageState extends State<RulesPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey.shade800,
-        title: Text(
+        title: const Text(
           "Rules",
           style: TextStyle(
             color: Colors.white, //AppBarın yazısı beyaz
           ),
         ),
 
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
             color: Colors.white  //AppBardaki tüm ikonların rengi beyaz
         ),
       ),
@@ -34,7 +34,7 @@ class _RulesPageState extends State<RulesPage> {
           children: <Widget>[
         Expanded(
         child: ListView(
-            children: [
+            children: const [
               ListTile(
                 title: Text(
                     '1) Oyunu kazanmak için oyuncunun kendi üç taşının dikey, yatay veya çapraz olarak dizmesi gerekir.',
